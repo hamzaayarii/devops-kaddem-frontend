@@ -12,13 +12,16 @@ import { DepartementModule } from './features/departement/departement.module';
 import { EquipeModule } from './features/equipe/equipe.module';
 import { EtudiantModule } from './features/etudiant/etudiant.module';
 import { UniversiteModule } from './features/universite/universite.module';
+import { AuthModule } from './features/auth/auth.module';
+import { HomeComponent } from './features/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { UniversiteModule } from './features/universite/universite.module';
     DepartementModule,
     EquipeModule,
     EtudiantModule,
-    UniversiteModule
+    UniversiteModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

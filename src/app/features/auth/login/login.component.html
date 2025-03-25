@@ -1,0 +1,60 @@
+<div class="login-container">
+  <div class="box">
+    <span class="borderLine"></span>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+      <h2>Sign In</h2>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Email Input -->
+      <div class="inputBox">
+        <input id="email" type="email" formControlName="email" required
+          [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" />
+        <span>Email</span>
+        <i></i>
+
+        <!-- Email Validation Messages -->
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="validation-error">
+          <small *ngIf="loginForm.get('email')?.errors?.['required']">
+            Email is required
+          </small>
+          <small *ngIf="loginForm.get('email')?.errors?.['email']">
+            Invalid email format
+          </small>
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="inputBox">
+        <input id="password" type="password" formControlName="password" required
+          [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" />
+        <span>Password</span>
+        <i></i>
+
+        <!-- Password Validation Messages -->
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="validation-error">
+          <small *ngIf="loginForm.get('password')?.errors?.['required']">
+            Password is required
+          </small>
+          <small *ngIf="loginForm.get('password')?.errors?.['minlength']">
+            Password must be at least 6 characters
+          </small>
+        </div>
+      </div>
+
+      <!-- Additional Links -->
+      <div class="links">
+        <a href="#" class="forgot-password">Forgot Password</a>
+        <a routerLink="/register" class="signup">Sign Up</a>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="loginForm.invalid" class="login-button">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
