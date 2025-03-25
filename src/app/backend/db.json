@@ -3,12 +3,8 @@
     {
       "id": "e19c",
       "email": "test@gmail.com",
-      "password": "password"
-    },
-    {
-      "id": "bffe",
-      "email": "test@gmail.com",
-      "password": "password"
+      "password": "password",
+      "role": "ROLE_ADMIN"
     }
   ]
 }
