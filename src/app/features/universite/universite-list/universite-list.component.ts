@@ -61,15 +61,7 @@ export class UniversiteListComponent implements OnInit {
     doc.save('universites.pdf');
   }
 
-  exportExcel() {
-    this.universiteService.excelExport().subscribe(data => {
-      const blob = new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'universites.xlsx';
-      link.click();
-    });
-  }
+
 
   pagination(nbre: number, page: number) {
     this.universiteService.pagination(nbre, page).subscribe(data => {

@@ -1,104 +1,105 @@
-<!-- Side Navbar -->
-<nav class="side-navbar">
-  <div class="side-navbar-inner">
-    <!-- Sidebar Header    -->
-    <div class="sidebar-header d-flex align-items-center justify-content-center p-3 mb-3">
-      <!-- User Info-->
-      <div class="sidenav-header-inner text-center"><a href="#"> <img style="    height: 82px;
-        width: 184px;
-        margin-top: 37px;" src="../../assets/images/Logo_ESPRIT_Ariana.jpg" alt="esprit_logo" class="dark-logo"></a>
-
-      </div>
-      <!-- Small Brand information, appears on minimized sidebar--><a class="brand-small text-center" href="#">
-        <p class="h1 m-0">BD</p>
-      </a>
-    </div>
-
-    <ul class="list-unstyled">
-      <li class="sidebar-item"><a class="sidebar-link" href="#">
-          <svg class="svg-icon svg-icon-sm svg-icon-heavy me-2">
-            <use xlink:href="#real-estate-1"> </use>
-          </svg>Home </a></li>
-      <li class="sidebar-item">
-        <a class="sidebar-link" routerLink="/home/etudiant" aria-expanded="false">
-          <i data-feather="user" class="feather-icon"></i>
-          <span class="hide-menu">Etudiant</span>
-        </a>
-      </li>
-
-      <li class="sidebar-item">
-        <a class="sidebar-link" routerLink="/home/contrat" aria-expanded="false">
-          <i data-feather="user" class="feather-icon"></i>
-          <span class="hide-menu">Contrat</span>
-        </a>
-      </li>
-
-
-      <li class="sidebar-item">
-        <a class="sidebar-link" routerLink="/home/equipe" aria-expanded="false">
-          <i data-feather="user" class="feather-icon"></i>
-          <span class="hide-menu">Equipe</span>
-        </a>
-      </li>
-
-      <li class="sidebar-item">
-        <a class="sidebar-link" routerLink="/home/universite" aria-expanded="false">
-          <i data-feather="user" class="feather-icon"></i>
-          <span class="hide-menu">Universite</span>
-        </a>
-      </li>
-
-      <li class="sidebar-item">
-        <a class="sidebar-link" routerLink="/home/departement" aria-expanded="false">
-          <i data-feather="user" class="feather-icon"></i>
-          <span class="hide-menu">Departement</span>
-        </a>
-      </li>
-
-
-    </ul>
-  </div>
-</nav>
 <div class="page">
-  <!-- navbar-->
-  <header class="header mb-5 pb-3">
-    <nav class="nav navbar fixed-top">
-      <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between w-100">
-          <div class="d-flex align-items-center"></div>
-          <ul class="nav-menu mb-0 list-unstyled d-flex flex-md-row align-items-md-center">
-
-            <!-- Log out-->
-            <li class="nav-item"><a class="nav-link text-white text-sm ps-0" href="#"> <span
-                  class="d-none d-sm-inline-block">Logout</span>
-                <svg class="svg-icon svg-icon-xs svg-icon-heavy">
-                  <use xlink:href="#security-1"> </use>
-                </svg></a></li>
-          </ul>
+  <!-- Sidebar Navigation -->
+  <nav class="side-navbar">
+    <div class="side-navbar-inner">
+      <div class="sidebar-header d-flex align-items-center justify-content-center p-3 mb-3">
+        <div class="sidenav-header-inner text-center">
+          <a href="#">
+            <img src="../../assets/images/Logo_ESPRIT_Ariana.jpg" alt="esprit_logo" class="dark-logo"
+              style="height: 82px; width: 184px; margin-top: 37px;">
+          </a>
         </div>
       </div>
-    </nav>
-  </header>
 
-  <section class="py-5">
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Add router-outlet here to render child components -->
+      <ul class="list-unstyled">
+        <li class="sidebar-item"><a class="sidebar-link" routerLink="/home"><i data-feather="home"></i> Home</a></li>
+        <li class="sidebar-item"><a class="sidebar-link" routerLink="/home/etudiant"><i data-feather="users"></i>
+            Etudiant</a></li>
+        <li class="sidebar-item"><a class="sidebar-link" routerLink="/home/contrat"><i data-feather="file-text"></i>
+            Contrat</a></li>
+        <li class="sidebar-item"><a class="sidebar-link" routerLink="/home/equipe"><i data-feather="briefcase"></i>
+            Equipe</a></li>
+        <li class="sidebar-item"><a class="sidebar-link" routerLink="/home/universite"><i data-feather="book"></i>
+            Universite</a></li>
+        <li class="sidebar-item"><a class="sidebar-link" routerLink="/home/departement"><i data-feather="layers"></i>
+            Departement</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content">
+    <!-- Navbar -->
+    <header class="header mb-5 pb-3">
+      <nav class="nav navbar fixed-top">
+        <div class="container-fluid">
+          <div class="d-flex align-items-center justify-content-between w-100">
+            <ul class="nav-menu mb-0 list-unstyled d-flex flex-md-row align-items-md-center ms-auto">
+
+              <li class="nav-item">
+                <a class="nav-link text-white text-sm ps-0" href="#">
+                  <span class="d-none d-sm-inline-block">Logout</span>
+                  <svg class="svg-icon svg-icon-xs svg-icon-heavy">
+                    <use xlink:href="#security-1"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Default Welcome Content -->
+    <section class="container mt-5" *ngIf="!isChildRouteActive()">
+      <div class="text-center">
+        <h1 class="display-4 text-primary">Welcome to Kaddem Dashboard</h1>
+        <p class="lead text-muted">Manage universities, students, and departments easily.</p>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <div class="card text-center shadow-lg p-3">
+            <i class="fa fa-university fa-3x text-primary"></i>
+            <h4 class="mt-3">Total Universités</h4>
+            <p class="lead">{{ totalUniversites }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card text-center shadow-lg p-3">
+            <i class="fa fa-users fa-3x text-success"></i>
+            <h4 class="mt-3">Total Etudiants</h4>
+            <p class="lead">{{ totalEtudiants }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card text-center shadow-lg p-3">
+            <i class="fa fa-building fa-3x text-warning"></i>
+            <h4 class="mt-3">Total Departements</h4>
+            <p class="lead">{{ totalDepartements }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Navigation Buttons -->
+      <div class="row mt-5 text-center">
+        <div class="col-md-4">
+          <a routerLink="/home/universite" class="btn btn-primary btn-lg">Manage Universités</a>
+        </div>
+        <div class="col-md-4">
+          <a routerLink="/home/etudiant" class="btn btn-success btn-lg">Manage Etudiants</a>
+        </div>
+        <div class="col-md-4">
+          <a routerLink="/home/departement" class="btn btn-warning btn-lg">Manage Departements</a>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="container d-flex justify-content-center align-items-center mt-4" style="min-height: 60vh;">
+      <div class="w-100">
         <router-outlet></router-outlet>
       </div>
     </div>
-  </section>
-
-  <footer class="main-footer w-100 position-absolute bottom-0 start-0 py-2" style="background: #222">
-    <div class="container-fluid">
-      <div class="row text-center gy-3">
-        <div class="col-sm-6 text-sm-start">
-          <p class="mb-0 text-sm text-gray-600">Kaddem &copy; 2024-2025</p>
-        </div>
-        <div class="col-sm-6 text-sm-end">
-          <p class="mb-0 text-sm text-gray-600">Version 1.0.0</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>

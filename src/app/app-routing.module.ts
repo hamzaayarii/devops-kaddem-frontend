@@ -4,11 +4,7 @@ import { HomeComponent } from './features/home/home.component';
 import { AuthentificationGuardService } from './features/auth/authentification-guard.service';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+
   {
     path: 'home',
     component: HomeComponent,
@@ -25,10 +21,9 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
   },
-  {
-    path: '**',
-    redirectTo: 'login'
-  }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  //  { path: '**', component: NotFoundComponent } // Catch-all for invalid routes
+
 ];
 
 @NgModule({

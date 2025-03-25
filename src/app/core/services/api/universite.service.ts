@@ -52,9 +52,6 @@ export class UniversiteService {
     return this.http.get<Blob>(`${this.baseUrl}/export-pdf`, { responseType: 'blob' as 'json' });
   }
 
-  excelExport(): Observable<Blob> {
-    return this.http.get<Blob>(`${this.baseUrl}/export-excel`, { responseType: 'blob' as 'json' });
-  }
   pagination(nbre: number, page: number): Observable<Universite[]> {
     return this.http.get<Universite[]>(`${this.baseUrl}/retrieve-all-universites?page=${page}&size=${nbre}`);
   }
