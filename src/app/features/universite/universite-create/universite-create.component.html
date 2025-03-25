@@ -1,1 +1,33 @@
-<p>universite-create works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="text-center">Create New University</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="universiteForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label for="nomUniv" class="form-label">University Name</label>
+              <input type="text" class="form-control" id="nomUniv" formControlName="nomUniv"
+                [class.is-invalid]="isInvalid('nomUniv')">
+              <div *ngIf="isInvalid('nomUniv')" class="invalid-feedback">
+                <div *ngIf="nomUniv?.errors?.['required']">University Name is required</div>
+                <div *ngIf="nomUniv?.errors?.['minlength']">University Name must be at least 3 characters</div>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary me-2" [disabled]="universiteForm.invalid">
+                Create University
+              </button>
+              <button type="button" class="btn btn-secondary" (click)="onReset()">
+                Reset
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

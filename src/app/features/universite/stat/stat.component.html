@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Université Stats</h2>
+
+  <div class="stats">
+    <p><strong>Total Universités:</strong> {{ totalUniversites }}</p>
+    <p><strong>Total Départements:</strong> {{ totalDepartements }}</p>
+  </div>
+
+  <div class="export-buttons">
+    <button (click)="exportPDF()" class="btn btn-danger">Export PDF</button>
+    <!-- <button (click)="exportExcel()" class="btn btn-success">Export Excel</button>
+
+    -->
+  </div>
+</div>
