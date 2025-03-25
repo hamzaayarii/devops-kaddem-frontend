@@ -1,1 +1,104 @@
-<p>home works!</p>
+<!-- Side Navbar -->
+<nav class="side-navbar">
+  <div class="side-navbar-inner">
+    <!-- Sidebar Header    -->
+    <div class="sidebar-header d-flex align-items-center justify-content-center p-3 mb-3">
+      <!-- User Info-->
+      <div class="sidenav-header-inner text-center"><a href="#"> <img style="    height: 82px;
+        width: 184px;
+        margin-top: 37px;" src="../../assets/images/Logo_ESPRIT_Ariana.jpg" alt="esprit_logo" class="dark-logo"></a>
+
+      </div>
+      <!-- Small Brand information, appears on minimized sidebar--><a class="brand-small text-center" href="#">
+        <p class="h1 m-0">BD</p>
+      </a>
+    </div>
+
+    <ul class="list-unstyled">
+      <li class="sidebar-item"><a class="sidebar-link" href="#">
+          <svg class="svg-icon svg-icon-sm svg-icon-heavy me-2">
+            <use xlink:href="#real-estate-1"> </use>
+          </svg>Home </a></li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" routerLink="/home/etudiant" aria-expanded="false">
+          <i data-feather="user" class="feather-icon"></i>
+          <span class="hide-menu">Etudiant</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item">
+        <a class="sidebar-link" routerLink="/home/contrat" aria-expanded="false">
+          <i data-feather="user" class="feather-icon"></i>
+          <span class="hide-menu">Contrat</span>
+        </a>
+      </li>
+
+
+      <li class="sidebar-item">
+        <a class="sidebar-link" routerLink="/home/equipe" aria-expanded="false">
+          <i data-feather="user" class="feather-icon"></i>
+          <span class="hide-menu">Equipe</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item">
+        <a class="sidebar-link" routerLink="/home/universite" aria-expanded="false">
+          <i data-feather="user" class="feather-icon"></i>
+          <span class="hide-menu">Universite</span>
+        </a>
+      </li>
+
+      <li class="sidebar-item">
+        <a class="sidebar-link" routerLink="/home/departement" aria-expanded="false">
+          <i data-feather="user" class="feather-icon"></i>
+          <span class="hide-menu">Departement</span>
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+</nav>
+<div class="page">
+  <!-- navbar-->
+  <header class="header mb-5 pb-3">
+    <nav class="nav navbar fixed-top">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <div class="d-flex align-items-center"></div>
+          <ul class="nav-menu mb-0 list-unstyled d-flex flex-md-row align-items-md-center">
+
+            <!-- Log out-->
+            <li class="nav-item"><a class="nav-link text-white text-sm ps-0" href="#"> <span
+                  class="d-none d-sm-inline-block">Logout</span>
+                <svg class="svg-icon svg-icon-xs svg-icon-heavy">
+                  <use xlink:href="#security-1"> </use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="py-5">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Add router-outlet here to render child components -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer w-100 position-absolute bottom-0 start-0 py-2" style="background: #222">
+    <div class="container-fluid">
+      <div class="row text-center gy-3">
+        <div class="col-sm-6 text-sm-start">
+          <p class="mb-0 text-sm text-gray-600">Kaddem &copy; 2024-2025</p>
+        </div>
+        <div class="col-sm-6 text-sm-end">
+          <p class="mb-0 text-sm text-gray-600">Version 1.0.0</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
