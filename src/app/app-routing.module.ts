@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
+import { AuthentificationGuardService } from './features/auth/authentification-guard.service';
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, canActivate: [AuthentificationGuardService] },
   { path: 'auth', loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule) },
   { path: 'contrat', loadChildren: () => import('./features/contrat/contrat.module').then(m => m.ContratModule) },
   { path: 'departement', loadChildren: () => import('./features/departement/departement.module').then(m => m.DepartementModule) },
