@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UniversiteCreateComponent } from './universite-create.component';
 
 describe('UniversiteCreateComponent', () => {
@@ -8,6 +9,7 @@ describe('UniversiteCreateComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule, ReactiveFormsModule],
       declarations: [UniversiteCreateComponent]
     });
     fixture = TestBed.createComponent(UniversiteCreateComponent);
