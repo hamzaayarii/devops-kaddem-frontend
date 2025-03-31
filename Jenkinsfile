@@ -25,12 +25,19 @@ pipeline {
         stage('Frontend - Install Dependencies') {
             steps {
                 dir('frontend') {
-                    cache(path: 'node_modules', includes: '**/node_modules/**') {
+
                         sh 'npm ci'
-                    }
+
                 }
             }
         }
+        stage('Frontend - Run Tests') {
+              steps {
+                  dir('frontend') {
+                      sh 'npm test -- --watch=false --browsers=ChromeHeadless'
+                  }
+              }
+          }
 
         stage('SonarQube Analysis') {
             steps {
