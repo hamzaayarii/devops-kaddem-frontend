@@ -8,7 +8,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         DOCKER_USERNAME = "hamzabox"
-        FRONTEND_IMAGE = "${DOCKER_USERNAME}/ayarihamza-g1-kaddem-frontend"
+        FRONTEND_IMAGE = "${DOCKER_USERNAME}/ayarihamza-4twin2-g1-kaddem-frontend"
         FRONTEND_TAG = "${BUILD_NUMBER}"
         SONAR_PROJECT_KEY = "kaddem-devops-frontend"
     }
