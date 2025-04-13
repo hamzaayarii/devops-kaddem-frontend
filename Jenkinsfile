@@ -8,7 +8,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         DOCKER_USERNAME = "hamzabox"
-        FRONTEND_IMAGE = "${DOCKER_USERNAME}/ayarihamza-g1-kaddem-frontend"
+        FRONTEND_IMAGE = "${DOCKER_USERNAME}/AyariHamza-4TWIN2-G1-kaddem-frontend"
         FRONTEND_TAG = "${BUILD_NUMBER}"
         SONAR_PROJECT_KEY = "kaddem-devops-frontend"
     }
@@ -79,6 +79,16 @@ pipeline {
                 }
             }
         }
+        stage('Trigger CD Pipeline') {
+    steps {
+        build job: 'kaddem-pipeline',
+              wait: true,
+              parameters: [
+                  string(name: 'BACKEND_TAG', value: "${BUILD_NUMBER}"),
+                  string(name: 'FRONTEND_TAG', value: "${BUILD_NUMBER}")
+              ]
+    }
+}
     }
 
     post {
