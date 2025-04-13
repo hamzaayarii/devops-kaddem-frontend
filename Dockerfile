@@ -29,3 +29,13 @@ RUN mkdir -p /var/run && chmod 777 /var/run
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /usr/src/app/dist/exam1 /usr/share/nginx/html
+
+# Add JSON server and start script
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+# Install json-server
+RUN apk add --no-cache nodejs npm && npm install -g json-server
+
+# Set startup command
+CMD ["/start.sh"]
