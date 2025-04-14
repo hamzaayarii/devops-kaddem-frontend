@@ -79,6 +79,25 @@ pipeline {
                 }
             }
         }
+       stage('Trigger CD Pipeline') {
+    steps {
+        script {
+            // Copy the artifact from the most recent successful build of the backend job
+            copyArtifacts(projectName: 'kaddem-backend', selector: lastSuccessful(), filter: 'backend-build-number.txt')
+
+            // Read the backend build number
+            def backendBuildNumber = readFile('backend-build-number.txt').trim()
+
+            // Trigger the CD pipeline with correct parameters
+            build job: 'kaddem-pipeline',
+                  wait: true,
+                  parameters: [
+                      string(name: 'BACKEND_TAG', value: backendBuildNumber),
+                      string(name: 'FRONTEND_TAG', value: "${BUILD_NUMBER}")
+                  ]
+        }
+    }
+}
     }
 
     post {
