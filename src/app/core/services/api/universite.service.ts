@@ -7,7 +7,7 @@ import { Universite } from 'src/app/shared/models/universite.model';
   providedIn: 'root'
 })
 export class UniversiteService {
-  private baseUrl = 'http://localhost:8082/kaddem/universite';
+  private baseUrl = 'http://kaddem-backend:8089/kaddem/universite';
 
 
   constructor(private http: HttpClient) { }
