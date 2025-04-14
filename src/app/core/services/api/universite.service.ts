@@ -7,7 +7,7 @@ import { Universite } from 'src/app/shared/models/universite.model';
   providedIn: 'root'
 })
 export class UniversiteService {
-  private baseUrl = '/kaddem/universite';
+ private baseUrl = `${environment.defaultUrl}/universite`;
 
 
   constructor(private http: HttpClient) { }
